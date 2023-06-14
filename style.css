@@ -1,19 +1,88 @@
-
+/* Set background color and other properties for the body element */
 body {
-  background-color: #0B2447 ;
-  opacity: 1;
-  background-blend-mode: multiply;
+  background-color: #041c50;
+  color: #7cb4dc;
   max-width: 100%;
   overflow-x: hidden;
-  color: #7cb4dc; /* add this line to set the default text color */
-  transition: all 0.3s ease; /* add this line to enable smooth transition between modes */
-} 
+  transition: all 0.3s ease;
+}
+
+/* Style for the stars container */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Style for the stars */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Style for the glowing stars */
+.glowing-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+}
+
+/* Style for the glowing stars in light mode */
+body:not(.dark-mode) .stars-container .glowing-star {
+  background-color: #fff;
+  animation: glowing-star-reverse 2s ease-in-out infinite;
+}
+
+/* Keyframes for the glowing-star animation */
+@keyframes glowing-star-reverse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0.4;
+  }
+}
 
 /* light mode */
 body.dark-mode {
   background-color: #7cb4dc;
-  color: #041c50;
+  color: #041A40;
+  height:100%;
+  width: 100%;
+    background-image:  url('img/clouds.png');
+  background-position: 
+    0 20%,
+    0 10%;
+
+  background-size: 
+    90%,
+    30%;
+    animation: 50s para infinite linear;
 }
+
+@keyframes para {
+  100% {
+    background-position: 
+      -1500px 0,
+      -400px 10%
+    }
+  }
+
 body.dark-mode #aboutmeimage {
   border-color: #041c50; /* change this to the desired border color */
 }

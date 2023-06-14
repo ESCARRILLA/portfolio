@@ -11,8 +11,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+<body>
+  
+</body>
   <body>
-
     <nav class="container navbar navbar-expand-lg bg-light bg-transparent sticky-top">
       <div class="container-fluid" id="nav-bar">
         <a class="navbar-brand" href="#section1"><img src="img/JHE-logos_transparent.png" alt="" class="navbar-logo"> JHE | Portfolio</a>
@@ -47,7 +49,8 @@
         </div>
       </div>
     </nav>
-
+    
+    <div class="stars-container"></div>
     <section class="container" id="section1">
       <h1 id="home" style="text-align: center;"> 
         <div class="row">
@@ -287,6 +290,19 @@ window.addEventListener('load', handleScroll);$(document).ready(function() {
   });
 </script>
 
+<script>
+  // Get the stars container element
+const starsContainer = document.querySelector('.stars-container');
+
+// Create 100 glowing stars and add them to the stars container
+for (let i = 0; i < 100; i++) {
+  const starElement = document.createElement('div');
+  starElement.classList.add('glowing-star');
+  starElement.style.top = `${Math.random() * 100}%`;
+  starElement.style.left = `${Math.random() * 100}%`;
+  starsContainer.appendChild(starElement);
+}
+</script>
 
  
   </body>
